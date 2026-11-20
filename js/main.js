@@ -140,12 +140,16 @@
       started = true;
       obs.disconnect();
       el.classList.add("typing");
+      // Split into whole letters (graphemes) so Tamil vowel signs never show half-typed
+      var chars = (window.Intl && Intl.Segmenter)
+        ? Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(text), function (s) { return s.segment; })
+        : Array.from(text);
       var i = 0;
       (function type() {
         i++;
-        live.textContent = text.slice(0, i);
-        if (i < text.length) {
-          var ch = text.charAt(i - 1);
+        live.textContent = chars.slice(0, i).join("");
+        if (i < chars.length) {
+          var ch = chars[i - 1];
           setTimeout(type, /[.,:!?]/.test(ch) ? 260 : 28);
         } else {
           setTimeout(function () { el.classList.remove("typing"); }, 1500);

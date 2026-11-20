@@ -19,7 +19,7 @@
   --radius-sm: 8px;
   --shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 24px rgba(15, 23, 42, .06);
   --container: 1180px;
-  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font: "Plus Jakarta Sans", "Noto Sans Tamil", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ---------- Base ---------- */
@@ -233,6 +233,7 @@ address { font-style: normal; }
 .values-list span { font-size: .92rem; color: var(--muted); }
 
 /* ---------- Testimonials ---------- */
+[lang="ta"] { font-family: "Noto Sans Tamil", var(--font); line-height: 1.85; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .testimonial { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; margin: 0; }
 .testimonial blockquote { margin: 0 0 18px; color: var(--ink); font-size: 1rem; }
