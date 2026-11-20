@@ -255,7 +255,18 @@ address { font-style: normal; }
 .quote-testimonial figcaption > div { display: flex; flex-direction: column; }
 .quote-testimonial figcaption span { font-size: .88rem; }
 .translated { font-size: .78rem; color: var(--muted); font-style: italic; }
-.project-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.project-links-sub { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.link-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 8px; background: var(--primary); color: #fff;
+  font-weight: 600; font-size: .9rem; transition: background-color .2s;
+}
+.link-live::after { content: "↗"; font-size: .85em; }
+.link-live:hover { background: var(--primary-dark); text-decoration: none; }
+.link-code { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font-weight: 600; font-size: .9rem; }
+.link-code svg { width: 16px; height: 16px; fill: currentColor; }
+.link-code:hover { color: var(--primary); }
 
 /* ---------- FAQ ---------- */
 .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
